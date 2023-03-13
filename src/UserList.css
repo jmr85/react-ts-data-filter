@@ -1,9 +1,20 @@
-label {
+  label {
     font-weight: bold;
   }
   
   select {
     margin-left: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #f0f0f0;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #0074D9;
   }
   
   input[type="text"] {
