@@ -8,6 +8,7 @@ interface User {
   address: {
     city: string;
   };
+  [key: string]: any;
 }
 
 const UserList: React.FC = () => {
@@ -20,6 +21,7 @@ const UserList: React.FC = () => {
       .then((response) => response.json())
       .then((data: User[]) => {
         setUsers(data);
+        console.log("DATA ---> ", data);
         setFilteredUsers(data);
       })
       .catch((error) => console.log(error));
