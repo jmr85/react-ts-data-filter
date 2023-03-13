@@ -60,7 +60,8 @@ const UserList: React.FC = () => {
   }
 
   return (
-    <div>
+    <>
+      <h1>User List</h1>
       <label htmlFor="filterBy">Filter by:</label>
       <select id="filterBy" value={filterBy} onChange={handleFilterChange}>
         <option value="name">Name</option>
@@ -90,7 +91,7 @@ const UserList: React.FC = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
