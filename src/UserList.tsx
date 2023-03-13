@@ -15,16 +15,24 @@ const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [filterBy, setFilterBy] = useState<string>("name");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data: User[]) => {
         setUsers(data);
         console.log("DATA ---> ", data);
         setFilteredUsers(data);
+        setIsLoading(false);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error.message)
+        setIsLoading(false);
+        setError(error.message);
+      });
   }, []);
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -38,6 +46,14 @@ const UserList: React.FC = () => {
     );
     setFilteredUsers(filtered);
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
