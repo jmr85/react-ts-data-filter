@@ -42,7 +42,10 @@ const UserList: React.FC = () => {
   const handleFilterInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const filterValue = event.target.value.toLowerCase();
     const filtered = users.filter((user) =>
-      user[filterBy].toLowerCase().includes(filterValue)
+      // user[filterBy].toLowerCase().includes(filterValue)
+      filterBy === 'address.city' 
+      ? user.address.city.toLowerCase().includes(filterValue)
+      : user[filterBy].toLowerCase().includes(filterValue)
     );
     setFilteredUsers(filtered);
   };
