@@ -1,51 +1,81 @@
-  /* Tipografia */
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-    
-  label {
-    font-weight: bold;
-  }
-  
-  select {
-    margin-left: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-    border: none;
-    border-radius: 0.25rem;
-    background-color: #f0f0f0;
-  }
-  
-  select:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #0074D9;
-  }
-  
-  input[type="text"] {
-    margin-left: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ccc;
-  }
-  
+/* Tipografia */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+input[type="text"],
+select {
+  font-size: 1.1em;
+  color: #333;
+  border-radius: 0.25rem;
+  background-color: #f0f0f0;
+}
+
+/* Espacios y margenes */
+select {
+  margin-left: 1rem;
+  padding: 0.5rem;
+}
+
+input[type="text"] {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+th {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+/* Colores */
+th {
+  background-color: #e6e6e6;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0074D9;
+}
+
+/* Diseño responsivo */
+@media screen and (max-width: 768px) {
   table {
-    border-collapse: collapse;
-    margin-top: 1rem;
-    width: 100%;
+    font-size: 0.9em;
   }
-  
-  th {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    text-align: left;
-  }
-  
+
+  th,
   td {
-    border: 1px solid #ccc;
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
-  
+
+  label {
+    font-size: 1em;
+  }
+
+  select,
+  input[type="text"] {
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+  }
+}
